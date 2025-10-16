@@ -71,7 +71,7 @@ The architecture uses a microservices approach to separate concerns and scale re
 
 ```mermaid
 graph TD
-    % Define the components
+    %% Define the components
     A[Client]
     B[CDN]
     C[API Gateway: Auth, Rate Limiting, Routing]
@@ -94,24 +94,24 @@ graph TD
         L[CDC]
     end
 
-    % Define Flows
+    %% Define Flows
     A --> B
     B --> C
 
-    % Read/Search Path
+    %% Read/Search Path
     C -- GET /search --> D
     D --> H
     C -- GET /event/{id} --> E
     E -- Read --> G
 
-    % Write/Booking Path
+    %% Write/Booking Path
     C -- POST/PUT /booking --> K
     K --> F
     F -- Reserve Lock --> I
     F -- Final Write --> G
     F -- Payment --> J
 
-    % Asynchronous Data Flow
+    %% Asynchronous Data Flow
     G -- Data Changes --> L
     L --> H
     
