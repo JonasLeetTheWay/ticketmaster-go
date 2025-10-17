@@ -103,6 +103,7 @@ func getEnvFloat(key string, defaultValue float64) float64{
 func parseDuration(s string) time.Duration {
 	duration, err := time.ParseDuration(s)
 	if err != nil {
-		return duration * time.Hour
+		return 24 * time.Hour // default 24 hr
 	}
+	return duration
 }
