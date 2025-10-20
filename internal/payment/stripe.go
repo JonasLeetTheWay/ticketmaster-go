@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/JonasLeetTheWay/ticketmaster-go/internals/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
 )
 
 type MockStripeClient struct {

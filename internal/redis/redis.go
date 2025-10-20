@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/JonasLeetTheWay/ticketmaster-go/internals/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
 	"github.com/go-redis/redis/v8"
 )
 

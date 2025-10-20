@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/JonasLeetTheWay/ticketmaster-go/internals/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
 	"github.com/golang-jwt/jwt/v5"
 )
 

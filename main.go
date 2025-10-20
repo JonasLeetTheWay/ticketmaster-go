@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/JonasLeetTheWay/ticketmaster-go/internals/config"
-	"github.com/JonasLeetTheWay/ticketmaster-go/internals/database"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/database"
 	"github.com/gin-gonic/gin"
 )
 

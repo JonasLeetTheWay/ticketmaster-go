@@ -5,8 +5,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/JonasLeetTheWay/ticketmaster-go/internals/config"
-	"github.com/JonasLeetTheWay/ticketmaster-go/internals/models"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
