@@ -3,8 +3,11 @@ package main
 import (
 	"log"
 
-	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
-	"github.com/JonasLeetTheWay/ticketmaster-go/internal/database"
+	"ticketmaster-go/internal/config"
+	"ticketmaster-go/internal/database"
+	"ticketmaster-go/internal/redis"
+	"ticketmaster-go/internal/services/booking"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,10 +19,16 @@ func main() {
 	}
 
 	// Connect to database
-	_, err = database.Connect(cfg)
+	db, err := database.Connect(cfg)
 	if err != nil {
 		log.Fatal("Failed to connect to database:", err)
 	}
+
+	// Connect to Redis
+	redisClient := redis.NewClient(cfg)
+
+	// Create service
+	bookingService := booking.NewService(db, redisClient, cfg)
 
 	// Setup Gin router
 	r := gin.Default()
@@ -38,9 +47,12 @@ func main() {
 		c.Next()
 	})
 
+	// Setup routes
+	bookingService.SetupRoutes(r)
+
 	// Start server
-	log.Printf("API Gateway starting on port %s", cfg.APIGatewayPort)
-	if err := r.Run(":" + cfg.APIGatewayPort); err != nil {
-		log.Fatal("Failed to start API Gateway:", err)
+	log.Printf("Booking Service starting on port %s", cfg.BookingServicePort)
+	if err := r.Run(":" + cfg.BookingServicePort); err != nil {
+		log.Fatal("Failed to start Booking Service:", err)
 	}
 }
