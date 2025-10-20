@@ -3,10 +3,10 @@ package main
 import (
 	"log"
 
-	"ticketmaster-go/internal/config"
-	"ticketmaster-go/internal/database"
-	"ticketmaster-go/internal/redis"
-	"ticketmaster-go/internal/services/booking"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/database"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/redis"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/services/booking"
 
 	"github.com/gin-gonic/gin"
 )

@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"ticketmaster-go/internal/config"
-	"ticketmaster-go/internal/database"
-	"ticketmaster-go/internal/services/gateway"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/database"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/services/gateway"
 
 	"github.com/gin-gonic/gin"
 )

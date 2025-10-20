@@ -7,10 +7,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"ticketmaster-go/internal/config"
-	"ticketmaster-go/internal/database"
-	"ticketmaster-go/internal/elasticsearch"
-	"ticketmaster-go/internal/services/cdc"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/config"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/database"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/elasticsearch"
+	"github.com/JonasLeetTheWay/ticketmaster-go/internal/services/cdc"
 
 	"github.com/gin-gonic/gin"
 )
